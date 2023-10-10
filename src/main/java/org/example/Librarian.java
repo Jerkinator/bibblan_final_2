@@ -18,7 +18,7 @@ public class Librarian {
         userList = new ArrayList<>();
     }
     public void removeBook(int input){
-        System.out.println("removing book:\n--> " + allBooks.get(input -1));
+        System.out.println("removing book: " + allBooks.get(input -1));
         allBooks.remove(input -1);
     }
     //This method adds user to the user list.
@@ -59,9 +59,14 @@ public class Librarian {
     }
     //This method adds book of choice to borrowed book-list, and removes the same book from available books.
     public void borrowBook(int input) {
-        borrowedBooks.add(allBooks.get(input-1));
+        borrowedBooks.add(availableBooks.get(input-1));
         System.out.println("Successfully borrowed: " + availableBooks.get(input-1).getTitle());
         availableBooks.remove(input - 1);
+    }
+    public void returnBook(int input) {
+        availableBooks.add(borrowedBooks.get(input - 1));
+        borrowedBooks.remove(input - 1);
+        System.out.println("Book successfully returned!");
     }
     //This method adds 10 books to the library.
     public void library() {

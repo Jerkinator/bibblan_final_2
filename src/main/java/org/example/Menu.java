@@ -113,7 +113,10 @@ public class Menu {
                     enterToContinue();
                     break;
                 case "5":
-                    // code
+                    lib.borrowedBooks();
+                    System.out.println("Please enter the number of the book you want to return: ");
+                    int bookReturn = input.nextInt();
+                    lib.returnBook(bookReturn);
                     enterToContinue();
                     break;
                 case "6":
