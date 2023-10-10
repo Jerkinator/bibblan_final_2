@@ -117,5 +117,4 @@ public class Librarian {
             System.out.println("[" + (i+1) + "]" + ": " + availableBooks.get(i).getTitle());
         }
     }
-
 }
